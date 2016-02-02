@@ -244,8 +244,6 @@ fi
 
 ## Apache Sqoop 1.4.6
 ## Author: mehdi.idoudi@gmail.com
-read -p "install apache sqoop ? [Y/N]" update
-if [[ $update =~ ^[Yy]$ ]]; then
 
 	read -p "Setup apache sqoop ? [Y/N]" update
 	if [[ $update =~ ^[Yy]$ ]]; then
@@ -257,4 +255,3 @@ if [[ $update =~ ^[Yy]$ ]]; then
 		./bin/addtowar.sh -hadoop-auto
 		./bin/addtowar.sh -hadoop-version 2.0 -hadoop-path /usr/lib/hadoop-common:/usr/lib/hadoop-hdfs:/usr/lib/hadoop-yarn
 	fi        	
-fi
