@@ -240,3 +240,21 @@ hadoop fs -mkdir /usr/hive/warehouse
 hadoop fs -chmod g+w /usr/hive/warehouse
 fi
 fi 
+
+
+## Apache Sqoop 1.4.6
+## Author: mehdi.idoudi@gmail.com
+read -p "install apache sqoop ? [Y/N]" update
+if [[ $update =~ ^[Yy]$ ]]; then
+
+	read -p "Setup apache sqoop ? [Y/N]" update
+	if [[ $update =~ ^[Yy]$ ]]; then
+		cd ~/Downloads/
+		sudo wget http://apache.claz.org/sqoop/1.4.6/sqoop-1.4.6.bin__hadoop-1.0.0.tar.gz
+		sudo tar -xzvf sqoop-1.4.6.bin__hadoop-1.0.0.tar.gz 
+		mv sqoop-1.4.6.bin__hadoop-1.0.0.tar.gz /usr/lib/sqoop
+		cd /usr/lib/sqoop
+		./bin/addtowar.sh -hadoop-auto
+		./bin/addtowar.sh -hadoop-version 2.0 -hadoop-path /usr/lib/hadoop-common:/usr/lib/hadoop-hdfs:/usr/lib/hadoop-yarn
+	fi        	
+fi
