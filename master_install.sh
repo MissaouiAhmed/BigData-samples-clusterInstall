@@ -242,16 +242,13 @@ fi
 fi 
 
 
-## Apache Sqoop 1.4.6
+## Apache Sqoop 1.99.6
 ## Author: mehdi.idoudi@gmail.com
 
 	read -p "Setup apache sqoop ? [Y/N]" update
 	if [[ $update =~ ^[Yy]$ ]]; then
 		cd ~/Downloads/
-		sudo wget http://apache.claz.org/sqoop/1.4.6/sqoop-1.4.6.bin__hadoop-1.0.0.tar.gz
-		sudo tar -xzvf sqoop-1.4.6.bin__hadoop-1.0.0.tar.gz 
-		mv sqoop-1.4.6.bin__hadoop-1.0.0.tar.gz /usr/lib/sqoop
-		cd /usr/lib/sqoop
-		./bin/addtowar.sh -hadoop-auto
-		./bin/addtowar.sh -hadoop-version 2.0 -hadoop-path /usr/lib/hadoop-common:/usr/lib/hadoop-hdfs:/usr/lib/hadoop-yarn
+		sudo wget wget http://apache.proserve.nl/sqoop/1.99.6/sqoop-1.99.6-bin-hadoop200.tar.gz
+		sudo tar -xzvf sqoop-1.99.6-bin-hadoop200.tar.gz 
+		mv sqoop-1.99.6-bin-hadoop200 /usr/lib/sqoop
 	fi        	
